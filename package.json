@@ -1,0 +1,22 @@
+{
+  "name": "prac",
+  "version": "1.0.0",
+  "description": "practise",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bundy10/fun.git"
+  },
+  "author": "bundy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bundy10/fun/issues"
+  },
+  "homepage": "https://github.com/bundy10/fun#readme",
+  "dependencies": {
+    "sinon": "^17.0.1"
+  }
+}
