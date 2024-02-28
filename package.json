@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bundy10/fun#readme",
   "dependencies": {
+    "mocha": "^10.3.0",
     "sinon": "^17.0.1"
   }
 }
