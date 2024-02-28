@@ -14,4 +14,10 @@ describe('multiplesOfThreeAndFive', () => {
         const result = multiplesOfThreeAndFive(numInput);
         assert.deepStrictEqual(result, expectedResult)
     });
+    it('shall return positive number if input is a positive number', () => {
+        const numInput = 1
+        const expectedResult = 1
+        const result = multiplesOfThreeAndFive(numInput);
+        assert.deepStrictEqual(result, expectedResult)
+    });
 });
