@@ -17,7 +17,8 @@ const assert = require('assert')
 // or n/2, will be too slow.
 
 describe('is a prime number', () => {
-    it('shall call isAPrimeNum', () => {
+    it('shall return null if null is passed', () => {
         const result = isAPrimeNum()
+        assert.strictEqual(result, null)
     })
 })
