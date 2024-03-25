@@ -27,4 +27,12 @@ describe('is a prime number', () => {
         assert.strictEqual(result, false)
     })
 
+    it('shall return false when something other than an int is passed', () => {
+        const testInputs = [21, 123.32, "string", undefined, {}, Symbol(), function(){}];
+        testInputs.forEach(input => {
+            const result = isAPrimeNum(input)
+            assert.strictEqual(result, false)
+        })
+    })
+
 })
