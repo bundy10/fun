@@ -35,4 +35,11 @@ describe('is a prime number', () => {
         })
     })
 
+    it('shall return false when number less than 1 is passed', () => {
+        const testInputs = [0, 1, -1, -2, -3, -4]
+        testInputs.forEach(input => {
+            const result = isAPrimeNum(input)
+            assert.strictEqual(result, false)
+        })
+    })
 })
