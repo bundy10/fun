@@ -52,4 +52,9 @@ describe('is a prime number', () => {
         const result = isAPrimeNum(4)
         assert.strictEqual(result, false)
     })
+
+    it('shall return true if 43 is passed', () => {
+        const result = isAPrimeNum(43)
+        assert.strictEqual(result, true)
+    })
 })
