@@ -10,4 +10,8 @@ describe('Change Combinations', () => {
         const result = changeCombinations(32, [])
         assert.strictEqual(result, 0)
     })
+    it('shall return undefined if totalamount or coin array contain invalid data type', () => {
+        const result = changeCombinations()
+        assert.strictEqual(result, undefined)
+    })
 })

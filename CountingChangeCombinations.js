@@ -15,8 +15,11 @@
 // countChange(10, [5,2,3]) // => 4
 // countChange(11, [5,7]) //  => 0
 
+const {type} = require("mocha/lib/utils");
+
 function countingChangeCombinations(totalAmount, coins){
     if(totalAmount === null || coins === null )return null;
+    if (!Number.isInteger(totalAmount) || !Array.isArray(coins) || !coins.every(Number.isInteger)) return undefined
     return 0;
 }
 
