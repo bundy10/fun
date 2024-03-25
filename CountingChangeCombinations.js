@@ -16,7 +16,8 @@
 // countChange(11, [5,7]) //  => 0
 
 function countingChangeCombinations(totalAmount, coins){
-    return null;
+    if(totalAmount === null || coins === null )return null;
+    return 0;
 }
 
 module.exports = countingChangeCombinations;
