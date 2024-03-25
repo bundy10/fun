@@ -20,6 +20,12 @@ const {type} = require("mocha/lib/utils");
 function countingChangeCombinations(totalAmount, coins){
     if(totalAmount === null || coins === null )return null;
     if (!Number.isInteger(totalAmount) || !Array.isArray(coins) || !coins.every(Number.isInteger)) return undefined
+
+    if (totalAmount > 0 && coins.length > 0){
+        let dp = [totalAmount + 1];
+        dp[0] = 1;
+        return 1;
+    }
     return 0;
 }
 

@@ -22,4 +22,13 @@ describe('Change Combinations', () => {
         const result = changeCombinations(0, [1,2,3])
         assert.strictEqual(result, 0)
     })
+    it('shall return 0 when coin array contains coins and total amount is 0', () => {
+        const result = changeCombinations(0, [1,2,3])
+        assert.strictEqual(result, 0)
+    })
+    it('shall return 1 when coin array contains 1 and total amount is 1', () => {
+        const result = changeCombinations(1, [1])
+        assert.strictEqual(result, 1)
+    })
+
 })
