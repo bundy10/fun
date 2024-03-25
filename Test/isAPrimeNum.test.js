@@ -18,7 +18,13 @@ const assert = require('assert')
 
 describe('is a prime number', () => {
     it('shall return null if null is passed', () => {
-        const result = isAPrimeNum()
+        const result = isAPrimeNum(null)
         assert.strictEqual(result, null)
     })
+
+    it('shall return false when a string is passed', () => {
+        const result = isAPrimeNum("string")
+        assert.strictEqual(result, false)
+    })
+
 })
