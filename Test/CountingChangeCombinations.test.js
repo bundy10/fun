@@ -18,4 +18,8 @@ describe('Change Combinations', () => {
         const result = changeCombinations(0, [0])
         assert.strictEqual(result, 0)
     })
+    it('shall return 0 when coin array contains coins and total amount is 0', () => {
+        const result = changeCombinations(0, [1,2,3])
+        assert.strictEqual(result, 0)
+    })
 })
