@@ -14,4 +14,8 @@ describe('Change Combinations', () => {
         const result = changeCombinations()
         assert.strictEqual(result, undefined)
     })
+    it('shall return 0 when coin array is empty and total amount is 0', () => {
+        const result = changeCombinations(0, [0])
+        assert.strictEqual(result, 0)
+    })
 })
