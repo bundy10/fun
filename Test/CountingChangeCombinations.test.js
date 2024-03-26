@@ -30,5 +30,17 @@ describe('Change Combinations', () => {
         const result = changeCombinations(1, [1])
         assert.strictEqual(result, 1)
     })
+    it('shall return 2 when coin array contains 1,2 and total amount is 2', () => {
+        const result = changeCombinations(2, [1,2])
+        assert.strictEqual(result, 2)
+    })
+    it('shall return 4 when coin array contains 5,2,3 and total amount is 10', () => {
+        const result = changeCombinations(10, [5,2,3])
+        assert.strictEqual(result, 4)
+    })
+    it('shall return 4 when coin array contains 5,10,20,50,100,200,500 and total amount is 300', () => {
+        const result = changeCombinations(300, [5,10,20,50,100,200,500])
+        assert.strictEqual(result, 1022)
+    })
 
 })

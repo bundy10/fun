@@ -21,10 +21,17 @@ function countingChangeCombinations(totalAmount, coins){
     if(totalAmount === null || coins === null )return null;
     if (!Number.isInteger(totalAmount) || !Array.isArray(coins) || !coins.every(Number.isInteger)) return undefined
 
-    if (totalAmount > 0 && coins.length > 0){
-        let dp = [totalAmount + 1];
+    if (totalAmount > 0 && coins.length > 0) {
+        let dp = new Array(totalAmount + 1).fill(0);
         dp[0] = 1;
-        return 1;
+        for (let i = 0; i < coins.length; ++i) {
+            for (let j = coins[i]; j <= totalAmount; ++j) {
+                if (dp[j - coins[i]] !== undefined) {
+                    dp[j] += dp[j - coins[i]];
+                }
+            }
+        }
+        return dp[totalAmount]
     }
     return 0;
 }
