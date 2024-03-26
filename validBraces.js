@@ -14,8 +14,12 @@
 //     Examples
 function ValidBraces(bracesString){
     if (bracesString === null )return null;
-    if (bracesString === "(") return false;
+    const regex = /^[()\[\]{}]*$/;
+    if (regex.test(bracesString)){
+        return bracesString === "()";
+    }
     return undefined
+
 }
 
 module.exports = ValidBraces;
