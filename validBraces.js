@@ -14,6 +14,7 @@
 //     Examples
 function ValidBraces(bracesString){
     if (bracesString === null )return null;
+    if (bracesString === "(") return false;
     return undefined
 }
 

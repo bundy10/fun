@@ -8,6 +8,14 @@ describe('ValidBraces', () => {
     })
     it('shall return undefined if a non valid string is passed', () => {
         const result = ValidBraces("dawd(){}[]")
-        assert.strictEqual(result, null)
+        assert.strictEqual(result, undefined)
+    })
+    it('shall return false when ( is passed', () => {
+        const result = ValidBraces("(")
+        assert.strictEqual(result, false)
+    })
+    it('shall return true when () is passed', () => {
+        const result = ValidBraces("()")
+        assert.strictEqual(result, true)
     })
 })
