@@ -22,4 +22,16 @@ describe('ValidBraces', () => {
         const result = ValidBraces("()}")
         assert.strictEqual(result, false)
     })
+    it('shall return true when (){} is passed', () => {
+        const result = ValidBraces("(){}")
+        assert.strictEqual(result, true)
+    })
+    it('shall return true when {{{[[[((()))]]]}}} is passed', () => {
+        const result = ValidBraces("{{{[[[((()))]]]}}}")
+        assert.strictEqual(result, true)
+    })
+    it('shall return true when {}{}{}[][][]()()()()[]() is passed', () => {
+        const result = ValidBraces("{}{}{}[][][]()()()()[]()")
+        assert.strictEqual(result, true)
+    })
 })

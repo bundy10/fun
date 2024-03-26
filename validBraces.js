@@ -16,7 +16,19 @@ function ValidBraces(bracesString){
     if (bracesString === null )return null;
     const regex = /^[()\[\]{}]*$/;
     if (regex.test(bracesString)){
-        return bracesString === "()";
+        let openingBraces = ['[', '{', '(']
+        let closingBraces = [']', '}', ')']
+        let stack = []
+        for (let i = 0; i < bracesString.length; i++) {
+            if (openingBraces.includes(bracesString[i])) {
+                stack.push(closingBraces[openingBraces.indexOf(bracesString[i])]);
+            } else if (closingBraces.includes(bracesString[i])) {
+                if (stack.length === 0 || stack.pop() !== bracesString[i]) {
+                    return false;
+                }
+            }
+        }
+        return stack.length === 0;
     }
     return undefined
 
