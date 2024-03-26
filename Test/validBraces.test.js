@@ -18,4 +18,8 @@ describe('ValidBraces', () => {
         const result = ValidBraces("()")
         assert.strictEqual(result, true)
     })
+    it('shall return false when ()} is passed', () => {
+        const result = ValidBraces("()}")
+        assert.strictEqual(result, false)
+    })
 })
