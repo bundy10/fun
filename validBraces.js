@@ -13,8 +13,8 @@
 //
 //     Examples
 function ValidBraces(bracesString){
-    return null;
-
+    if (bracesString === null )return null;
+    return undefined
 }
 
 module.exports = ValidBraces;

@@ -6,4 +6,8 @@ describe('ValidBraces', () => {
         const result = ValidBraces(null)
         assert.strictEqual(result, null)
     })
+    it('shall return undefined if a non valid string is passed', () => {
+        const result = ValidBraces("dawd(){}[]")
+        assert.strictEqual(result, null)
+    })
 })
