@@ -16,18 +16,34 @@ function ValidBraces(bracesString){
     if (bracesString === null )return null;
     const regex = /^[()\[\]{}]*$/;
     if (regex.test(bracesString)){
-        let prev = "";
-        while (bracesString.length !== prev.length) {
-            prev = bracesString;
-            bracesString = bracesString
-                .replace("()", "")
-                .replace("[]", "")
-                .replace("{}", "");
+        let openingBraces = ['[', '{', '(']
+        let closingBraces = [']', '}', ')']
+        let stack = []
+        for (let i = 0; i < bracesString.length; i++) {
+            if (openingBraces.includes(bracesString[i])) {
+                stack.push(closingBraces[openingBraces.indexOf(bracesString[i])]);
+            } else if (closingBraces.includes(bracesString[i])) {
+                if (stack.length === 0 || stack.pop() !== bracesString[i]) {
+                    return false;
+                }
+            }
         }
-        return (bracesString.length === 0);
+        return stack.length === 0;
     }
     return undefined
 
 }
+
+// let prev = "";
+// while (bracesString.length !== prev.length) {
+//     prev = bracesString;
+//     bracesString = bracesString
+//         .replace("()", "")
+//         .replace("[]", "")
+//         .replace("{}", "");
+// }
+// return (bracesString.length === 0);
+// }
+// return undefined
 
 module.exports = ValidBraces;
