@@ -31,7 +31,11 @@ describe('VendingMachine', () => {
         assert.strictEqual(result, 3)
     })
     it('shall return 4 if 53 and [1, 2, 5, 25] is passed', () => {
-        const result = VendingMachine(12, [1,3,5,10])
-        assert.strictEqual(result, 3)
+        const result = VendingMachine(53, [1,2,5,25])
+        assert.strictEqual(result, 4)
+    })
+    it('shall return 7 if 7 and [1, 1, 1, 25] is passed', () => {
+        const result = VendingMachine(7, [1, 1, 1, 25])
+        assert.strictEqual(result, 7)
     })
 })

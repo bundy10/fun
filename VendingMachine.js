@@ -6,26 +6,15 @@
 
 function VendingMachine(totalAmount, coins){
     if (totalAmount === null || coins === null) return null;
-    if (totalAmount > 0 && coins.length > 0)
-    {
-        if(coins.includes(totalAmount)){
-            return 1;
-        }
+    const dp = new Array(totalAmount + 1).fill(Infinity);
+    dp[0] = 0;
 
-        for (let i = 0; i < coins.length; i++){
-            const difference = totalAmount - i;
-            if (coins.includes(difference)){
-                return 2;
-            }
-            if (coins.includes(difference - i)){
-                return 3;
-            }
-            if (coins.includes(difference - i - i)){
-                return 4;
-            }
+    for (let coin of coins) {
+        for (let amount = coin; amount <= totalAmount; amount++) {
+            dp[amount] = Math.min(dp[amount], dp[amount - coin] + 1);
         }
     }
-    return 0;
+    return dp[totalAmount] !== Infinity ? dp[totalAmount] : -1;
 }
 
 module.exports = VendingMachine;
