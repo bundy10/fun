@@ -17,6 +17,12 @@ function VendingMachine(totalAmount, coins){
             if (coins.includes(difference)){
                 return 2;
             }
+            if (coins.includes(difference - i)){
+                return 3;
+            }
+            if (coins.includes(difference - i - i)){
+                return 4;
+            }
         }
     }
     return 0;
