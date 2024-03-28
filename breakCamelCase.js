@@ -8,7 +8,15 @@
 
 
 function BreakCamelCase(string) {
-    return string;
+    let result = ""
+    if (string === null) return null;
+    for (let i = 0; i< string.length; i++ ) {
+        if (string[i] === string[i].toUpperCase()){
+            result += " "
+        }
+        result += string[i];
+    }
+    return result;
 }
 
 module.exports = BreakCamelCase;

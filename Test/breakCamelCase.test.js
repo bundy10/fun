@@ -22,4 +22,12 @@ describe('BreaCamelCase', () => {
         const result = BreakCamelCase('ca');
         assert.strictEqual(result, 'ca')
     })
+    it('shall return ca D if caD is passed', () => {
+        const result = BreakCamelCase('caD');
+        assert.strictEqual(result, 'ca D')
+    })
+    it('shall return camel Case if camelCase is passed', () => {
+        const result = BreakCamelCase('camelCase');
+        assert.strictEqual(result, 'camel Case')
+    })
 })
