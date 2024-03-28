@@ -8,7 +8,7 @@
 
 
 function BreakCamelCase(string) {
-    return ""
+    return string;
 }
 
 module.exports = BreakCamelCase;
